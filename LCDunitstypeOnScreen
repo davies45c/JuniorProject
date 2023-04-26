@@ -93,7 +93,7 @@ void loop() {
         e = customKeypad.read();
         //Serial.print((char)e.bit.KEY);
       }
-      if((char)e.bit.KEY == 'B' ){
+      if((char)e.bit.KEY == 'C' ){
         lcd.clear();
         state = 6;
       }
@@ -117,6 +117,7 @@ void loop() {
     case 6:
       delay(3000);
       lcd.clear();
+      m = 0;
       state = 0;
       break;
     // RUNNING SAMPLE CASES
@@ -210,12 +211,12 @@ void loop() {
         e = customKeypad.read();
         Serial.print((char)e.bit.KEY);
       }
-      if((char)e.bit.KEY == 'A'){
+      if((char)e.bit.KEY == '*'){
         lcd.clear();
         state = 12;
         
       }
-      else if((char)e.bit.KEY == 'B'){
+      else if((char)e.bit.KEY == 'D'){
         lcd.clear();
         state = 13;
       }
@@ -223,11 +224,17 @@ void loop() {
     case 12:
       delay(1000);
       lcd.clear();
+      i = 0;
+      j = 0;
+      k = 0;
       state = 0;
       break;
     case 13:
       delay(1000);
       lcd.clear();
+      i = 0;
+      j = 0;
+      k = 0;
       state = 0;
       break;
   }
@@ -278,7 +285,7 @@ void loop() {
       lcd.setCursor(2,0);
       lcd.print("ENTER KNOWN");
       lcd.setCursor(2,3);
-      lcd.print("WEIGHT (G) B.");
+      lcd.print("WEIGHT (G) C.");
       break;
     case 6:
       //lcd.clear();
@@ -331,9 +338,9 @@ void loop() {
       lcd.setCursor(2,1);
       lcd.print("TO SD CARD");
       lcd.setCursor(2,2);
-      lcd.print("A. RETURN TO MENU");
+      lcd.print("*. RETURN TO MENU");
       lcd.setCursor(2,3);
-      lcd.print("B. EJECT SD CARD");
+      lcd.print("D. EJECT SD CARD");
       break;
     case 12:
       //lcd.clear();
@@ -364,7 +371,7 @@ boolean returnNum(char key){
   //  Serial.println("isDigit!");
   //int inputNum = atoi(&key);
   //if (inputNum >=  && inputNum <= 10)
-    if (key >=  '1' && key <= '10') {
+    if (key >=  '0' && key <= '9') {
       return true;
     }
     else{

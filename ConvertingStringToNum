@@ -42,10 +42,10 @@ void loop() {
       }
       if (x == 5){
         StringNum[x] = '\0';
-        int num = atoi(StringNum);
+        double num = atof(StringNum);
         Serial.print("The String is: ");
         Serial.println(StringNum);
-        Serial.print("\nThe integer is: ");
+        Serial.print("\nThe double is: ");
         Serial.println(num);
       }
     }
